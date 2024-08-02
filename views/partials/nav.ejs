@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title><%= title %></title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="logo">
+        <a href="/">
+          <img src="/assets/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="links">
+        <ul>
+          <li class="main-link">
+            <span>SERVICES <i class="fa fa-angle-double-down"></i></span>
+            <ul class="dropdown">
+              <% services.forEach(function(service) { %>
+              <li class="sub-link">
+                <a href="<%= service.href %>"><%= service.text %></a>
+              </li>
+              <% }); %>
+            </ul>
+          </li>
+          <li class="main-link"><a href="/work">WORK</a></li>
+          <li class="main-link"><a href="#">ABOUT US</a></li>
+          <li class="main-link"><a href="#">CAREERS</a></li>
+          <li class="main-link button"><a href="#">CONTACT US</a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>

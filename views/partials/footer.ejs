@@ -1,0 +1,51 @@
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="top">
+          <div class="content">
+            <h3 class="header">COMPANY</h3>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Team</a></p>
+            <p><a href="#">Careers</a></p>
+            <p><a href="#">Blog</a></p>
+            <p><a href="#">Experties</a></p>
+          </div>
+          <div class="content">
+            <h3 class="header">SERVICES</h3>
+            <% services.forEach(function(service) { %>
+            <p><a href="<%= service.href %>"><%= service.text %></a></p>
+            <% }); %>
+          </div>
+          <div class="content">
+            <h3 class="header">SOFTWARE AND IT PACKAGES</h3>
+            <% packages.forEach(function(package) { %>
+            <p><a href="#"><%= package %></a></p>
+            <% }); %>
+          </div>
+          <div class="content">
+            <h3 class="header">GET AN ESTIMATED PROJECT COST</h3>
+            <p>
+              Get in touch with us and turn your project into a reality by
+              receiving an accurate cost estimate.
+            </p>
+            <div class="main-link button"><a href="#">CONTACT US</a></div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="left">
+            © 2005 - 2023 Suave Solutions. All Rights Reserved.
+          </div>
+          <div class="right">
+            <a href="#"><i class="fa fa-facebook-square"></i></a>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+            <a href="#"><i class="fa fa-twitter-square"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+      </footer>
+      <script src="/js/script.js"></script>
+    </body>
+  </html>
+
+  
+
+  

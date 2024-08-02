@@ -1,0 +1,99 @@
+<style>
+  /* Basic styling for the carousel container */
+  .carousel-container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Styling for the carousel track */
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Styling for each card */
+  .carousel-card {
+    max-width: 250px;
+    max-height: 200px;
+    box-sizing: border-box;
+
+    padding: 10px;
+    contain: content;
+  }
+
+  .carousel-card img {
+    aspect-ratio: 1 1;
+  }
+
+  /* Styling for navigation buttons */
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-button.prev {
+    left: 10px;
+  }
+
+  .carousel-button.next {
+    right: 10px;
+  }
+</style>
+
+<div class="carousel-container">
+  <button class="carousel-button prev">❮</button>
+  <div class="carousel-track">
+    <% carsolcards.forEach(function(card) { %>
+    <div class="carousel-card">
+      <img src="<%= card.imgSrc %>" alt="" />
+    </div>
+    <% }); %>
+  </div>
+
+  <button class="carousel-button next">❯</button>
+</div>
+
+<script>
+  // JavaScript to handle carousel functionality
+  const track = document.querySelector(".carousel-track");
+  const cards = Array.from(document.querySelectorAll(".carousel-card"));
+  const prevButton = document.querySelector(".carousel-button.prev");
+  const nextButton = document.querySelector(".carousel-button.next");
+  const cardWidth = cards[0].offsetWidth;
+
+  let currentIndex = 0;
+
+  function updateTrackPosition() {
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  }
+
+  function showNextCard() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateTrackPosition();
+  }
+
+  function showPrevCard() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateTrackPosition();
+  }
+
+  nextButton.addEventListener("click", showNextCard);
+  prevButton.addEventListener("click", showPrevCard);
+</script>

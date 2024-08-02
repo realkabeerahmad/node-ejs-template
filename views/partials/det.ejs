@@ -1,0 +1,33 @@
+<!-- views/partials/serviceHeader.ejs -->
+<style>
+  .det {
+    display: flex;
+    align-items: center;
+    justify-content: none;
+    padding: 80px;
+  }
+  .det .content h1 {
+    font-size: 36px;
+    font-weight: 100;
+  }
+  .det .content p {
+    text-align: justify;
+  }
+  .det .image img {
+    width: 600px;
+    height: auto;
+  }
+</style>
+
+<% detsec.forEach(element => { %>
+<section class="det <%= element.direction %>">
+  <div class="content">
+    <h1><%= element.header %></h1>
+    <p><%= element.content %></p>
+  </div>
+  <div class="image">
+    <img src="<%= element.image %>" alt="" />
+  </div>
+</section>
+
+<% }) %>

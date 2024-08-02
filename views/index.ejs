@@ -1,0 +1,20 @@
+<%- include('partials/nav', { title: 'Home', services: services }) %>
+
+<!-- Header Section -->
+<section class="header">
+  <p class="top">ACCELERATE YOUR SOFTWARE DEVELOPMENT WITH OUR</p>
+  <p class="middle">Scalable Resource Augmentation Solutions</p>
+  <p class="end">Innovators - Enterprises - Startups</p>
+  <button class="button">
+    Let's Connect&nbsp;<i class="fa fa-arrow-circle-right"></i>
+  </button>
+</section>
+
+<%-include('partials/card', { services: homeServices }) %>
+<%-include('partials/card', { services: homeServices1 }) %>
+<%-include('partials/card', { services: homeServices2 }) %>
+
+<%- include('partials/carsol') %>
+</div>
+
+<%- include('partials/footer', { services: services, packages: packages }) %>

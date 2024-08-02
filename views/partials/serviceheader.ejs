@@ -1,0 +1,53 @@
+<!-- views/partials/serviceHeader.ejs -->
+<style>
+  .service-header {
+    background: url("<%= content.banner %>") no-repeat center center;
+    background-size: cover;
+    padding: 60px 20px;
+    color: #fff;
+    position: relative;
+  }
+
+  .heading {
+    font-size: 2.4em;
+    margin-bottom: 10px;
+    width: 550px;
+  }
+
+  .details {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    width: 550px;
+  }
+  .bullets {
+    margin: 30px 0;
+  }
+  .bullets li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .bullets img {
+    max-width: 30px;
+    height: auto;
+  }
+</style>
+
+<section class="service-header">
+  <div class="content">
+    <h2 class="heading"><%= content.heading %></h2>
+    <p class="details"><%= content.details %></p>
+    <ul class="bullets">
+      <% content.bullets.forEach(function(bullet) { %>
+      <li>
+        <img src="<%= bullet.imgSrc %>" alt="Bullet image" />
+        <p><%= bullet.text %></p>
+      </li>
+      <% }); %>
+    </ul>
+    <button class="button">
+      <%= content.button.text %>&nbsp;<i class="fa fa-arrow-circle-right"></i>
+    </button>
+  </div>
+</section>

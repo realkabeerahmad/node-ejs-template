@@ -1,0 +1,116 @@
+<style>
+  section.services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 10px;
+    width: 100%;
+  }
+  section.services h2 {
+    margin: 5px;
+    font-weight: 400;
+  }
+  section.services .cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 40px 0;
+  }
+  section.services .cards .card {
+    width: 400px;
+    min-width: 400px;
+    height: 450px;
+    border-radius: 20px;
+    margin: 20px 0;
+    contain: content;
+    transition: 0.3s border;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  section.services .cards .card-sm {
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
+    margin: 10px 0;
+    contain: content;
+    transition: 0.3s border;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+  }
+  section.services .cards .card-sm img {
+    width: 120px;
+  }
+  section.services .cards .card .card-img {
+    height: 200px;
+  }
+  section.services .cards .card .card-img img {
+    width: 150px;
+  }
+  section.services .cards .card .card-h1 {
+    font-size: 20px;
+  }
+  section.services .cards .card .card-h2 {
+    font-size: 20px;
+    color: var(--red) !important;
+  }
+  section.services .cards .card .card-p {
+    font-size: 14px;
+  }
+  section.services .cards .card .card-icon {
+    font-size: 35px;
+  }
+  section.services .cards .card .card-icon i {
+    transition: 0.3s color;
+  }
+  section.services .cards .card:hover .card-icon i {
+    color: var(--primary-color) !important;
+  }
+  section.services .cards .card:hover {
+    border: 1px solid var(--primary-color);
+  }
+</style>
+
+<section class="flex-center-column <%= services.style %>">
+  <% if (services.heading1 !== null) { %>
+  <p class="top <%= services.heading1.style %>">
+    <%= services.heading1.text.toUpperCase() %>
+  </p>
+  <% } %> <% if (services.heading2 !== null) { %>
+  <h2 class="<%= services.heading2.style %>"><%= services.heading2.text %></h2>
+  <% } %> <% if (services.description !== null) { %>
+  <p class="<%= services.description != undefined ?services.description.style:"" %>">
+    <%= services.description != undefined ? services.description.text: "" %>
+  </p>
+  <% } %>
+  <div class="cards">
+    <% services.cards.forEach(function(card) { %>
+    <div class="<%= card.style %>">
+      <% if (card.imgSrc !== null) { %>
+      <div class="<%= card.image.style %>">
+        <img src="<%= card.image.imgSrc %>" alt="<%= card.image.alt %>" />
+      </div>
+      <% } %> <% if (card.title !== null) { %>
+      <p class="card-h1"><%= card.title %></p>
+      <% } %> <% if (card.subtitle !== null) { %>
+      <p class="card-h2"><%= card.subtitle %></p>
+      <% } %> <% if (card.description !== null) { %>
+      <p class="card-p"><%= card.description %></p>
+      <% } %> <% if (card.icon == 'Y') { %>
+      <div class="card-icon">
+        <i class="fa fa-chevron-circle-down"></i>
+      </div>
+      <% } %>
+    </div>
+    <% }); %>
+  </div>
+</section>

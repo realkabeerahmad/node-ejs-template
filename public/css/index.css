@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap");
+:root {
+  --primary-color: #dfc722;
+  /* --primary-color: #24acff; */
+  --secondary-color: #566471;
+  --font-family: "Open Sans", sans-serif;
+  --red: #fd4046;
+  --white: #ffffff;
+  --black: #000000;
+  --grey: #f8f8f8;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-family: var(--font-family);
+}
+
+/* Navigation styles */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--white);
+  z-index: 10;
+}
+
+.nav .logo img {
+  height: 79px;
+  width: auto;
+}
+
+.nav .links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav .links > ul > .main-link {
+  display: inline-block;
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav .links > ul > .main-link,
+.nav .links > ul > .main-link:hover span,
+.nav .links > ul > .main-link i,
+.nav .links > ul > .main-link a {
+  transition: 0.3s all;
+}
+
+.nav .links > ul > .main-link:hover,
+.nav .links > ul > .main-link:hover span,
+.nav .links > ul > .main-link:hover i,
+.nav .links > ul > .main-link a:hover {
+  color: var(--primary-color) !important;
+}
+
+.nav .links > ul > .main-link > span {
+  cursor: pointer;
+}
+
+.nav .links > ul .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  z-index: 20;
+  border-radius: 5px;
+}
+
+.nav .links > ul .dropdown .sub-link {
+  display: block;
+}
+
+.nav .links > ul .dropdown .sub-link a {
+  color: var(--black);
+  padding: 10px 20px;
+  display: block;
+  transition: 0.3s all;
+}
+
+.nav .links > ul .dropdown .sub-link a:hover {
+  background-color: var(--primary-color);
+  color: var(--white) !important;
+}
+
+.nav .links > ul .button {
+  background-color: var(--primary-color);
+  color: var(--white) !important;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.nav .links > ul .button a:hover {
+  color: var(--white) !important;
+}
+
+/* Header Section */
+section.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("../assets/banner-image-for-suave-solutions-homepage-1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+section.header .top {
+  font-size: 25px;
+  margin: 10px;
+}
+section.header .middle {
+  font-size: 50px;
+  margin: 20px;
+}
+
+.button,
+.button i {
+  color: var(--secondary-color) !important;
+}
+
+section.services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 10px;
+  width: 100%;
+}
+section.services h2 {
+  margin: 5px;
+  font-weight: 400;
+}
+
+section.services .cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 40px 0;
+}
+
+section.services .cards .card {
+  width: 400px;
+  min-width: 400px;
+  height: 450px;
+  border-radius: 20px;
+  margin: 20px 0;
+  contain: content;
+  transition: 0.3s border;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+}
+
+section.services .cards .card-sm {
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
+  margin: 10px 0;
+  contain: content;
+  transition: 0.3s border;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+}
+
+section.services .cards .card-sm img {
+  width: 120px;
+}
+
+section.services .cards .card .card-img {
+  height: 200px;
+}
+section.services .cards .card .card-img img {
+  width: 150px;
+}
+section.services .cards .card .card-h1 {
+  font-size: 20px;
+}
+section.services .cards .card .card-h2 {
+  font-size: 20px;
+  color: var(--red) !important;
+}
+section.services .cards .card .card-p {
+  font-size: 14px;
+}
+section.services .cards .card .card-icon {
+  font-size: 35px;
+}
+section.services .cards .card .card-icon i {
+  transition: 0.3s color;
+}
+
+section.services .cards .card:hover .card-icon i {
+  color: var(--primary-color) !important;
+}
+
+section.services .cards .card:hover {
+  border: 1px solid var(--primary-color);
+}
+/* Footer Styles */
+.footer {
+  background-color: rgb(24, 24, 24);
+}
+
+.footer .top {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.footer .top .content {
+  width: 20%;
+}
+
+.footer .top .content .header {
+  color: var(--primary-color);
+}
+
+.footer .top .content p {
+  color: var(--secondary-color) !important;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.footer .top .content p a {
+  color: var(--secondary-color) !important;
+  transition: 0.3s;
+}
+
+.footer .top .content p a:hover {
+  color: var(--primary-color) !important;
+}
+
+.button {
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  transition: 0.3s all;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color) !important;
+}
+
+.button:hover a,
+.button:hover i {
+  color: var(--primary-color) !important;
+}
+
+.footer .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.footer .bottom .left,
+.footer .bottom .right a i {
+  color: var(--secondary-color) !important;
+}
+
+.footer .bottom .right a {
+  margin: 5px;
+}
+
+.footer .bottom .right a i {
+  font-size: 25px;
+}
+
+.bg-grey {
+  background-color: var(--grey);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.row {
+  flex-direction: row;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
